@@ -4,19 +4,19 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Index loading");
-    document.querySelector("nav a").addEventListener("click", function() {
-        let animateBtn = document.querySelector("#animateBtn");
-        const animateProcess = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                animateBtn.style.dispaly = "block";
-                animateBtn.style.animation = "changeToWhite 1s linear 0s 1 normal";
-            }, 1000);
-        });
-        animateBtn();
-    })
+    // document.querySelector("nav a").addEventListener("click", function() {
+    //     let animateBtn = document.querySelector("#animateBtn");
+    //     const animateProcess = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             animateBtn.style.dispaly = "block";
+    //             animateBtn.style.animation = "changeToWhite 1s linear 0s 1 normal";
+    //         }, 1000);
+    //     });
+    //     animateBtn();
+    // });
 
     // Load necessary elements
-    fetch('../json/movie_info.json')
+    fetch('./json/movie_info.json')
     .then(response => response.json())
     .then(data => {
         let n = 15;

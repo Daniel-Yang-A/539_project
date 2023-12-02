@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Index loading");
 
     // Load necessary elements
-    fetch('../json/movie_info.json')
+    fetch('./json/movie_info.json')
     .then(response => response.json())
     .then(data => {
         makeList(data, cur_idx);
