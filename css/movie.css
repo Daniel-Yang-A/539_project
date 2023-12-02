@@ -1,0 +1,185 @@
+/* mobile view */
+
+/* general settings */
+
+@keyframes Appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    z-index: 0;
+    min-height: 1500px;
+}
+
+main {
+    margin: 0;
+    margin: 2% 5% 3% 5%;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Lucida Sans', Times, serif;
+    font-size: 1.2rem;
+}
+
+#titleBar {
+    display: flex;
+    flex-direction: column;
+}
+
+#inverse {
+    transform: scaleY(-1);
+    display: inline-block;
+    --gradient: linear-gradient(transparent 50%, #ffffff 90%);
+    mask-image: url("../images/movieCluster.jpg");
+	-webkit-mask-image: var(--gradient);
+}
+
+/* navigation Bar  */
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #1f1f1f;
+    padding: 1rem 5% 2rem 5%;
+    margin: 0;
+    box-shadow: 0rem 1rem 10rem 0.1rem #ffffff;
+    height: 4rem;
+}
+
+title {
+    height: 5rem;
+    margin: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 6rem;
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 10rem;
+}
+
+nav a {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 2.3rem;
+    width: 5rem;
+    border-radius: 10rem;
+    color: #1f1f1f;
+    background-color: rgb(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-family: 'Lucida Sans', Times, serif;
+}
+
+nav a:hover, nav a:focus, img:hover, img:focus, video:hover, video:focus {
+    background-color: #f1f1f1;
+    box-shadow: 0rem 0rem 1rem 0.5rem rgba(255, 255, 255, 0.75);
+}
+
+@keyframes changeToWhite {
+    0% {
+        height: 10px;
+        width: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        height: 1000px;
+        width: 1000px;
+        opacity: 1;
+    }
+}
+
+#animateBtn {
+    display: none;
+    height: 10px;
+    width: 10px;
+    background-color: #f1f1f1;
+    display: block;
+    /* animation: changeToWhite 1s linear 0s 1 normal; */
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    border-radius: 5000px;
+}
+
+/* ========== */
+
+/* Auto Slider of Movie Poster */
+/* @keyframes smoothTrans {
+    0%   {position: relative; right: 0px;}
+    100% {position: relative; right: 100px;}
+}
+
+@keyframes smoothFade {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes smoothAppear {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+} */
+
+.autoSlider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    transition: transform 4s ease;
+    /* animation: smoothTrans 2s linear 2s infinite normal; */
+}
+
+.autoSlider img {
+    height: 185px;
+    width: 125px;
+    border: 5px solid #1f1f1f;
+}
+
+/* .autoSlider:nth-child(1) {
+    border: 5px solid red;
+    animation: smoothFade 2s linear 2s infinite normal;
+}
+
+.autoSlider:nth-child(2) {
+    border: 5px solid green;
+    animation: smoothTrans 2s linear 2s infinite normal;
+}
+
+.autoSlider:nth-child(3) {
+    border: 5px solid blue;
+    animation: smoothAppear 2s linear 2s infinite normal;
+} */
+
+/* ========== */
+
+video {
+    width: 100%;
+    z-index: 0;
+}
