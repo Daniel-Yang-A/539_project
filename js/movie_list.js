@@ -1,6 +1,18 @@
 
-let cur_idx = 0;
-const MAX_PAGE_ITEM = 25;
+CUR_IDX = 0;
+const MAX_PAGE_ITEM = 24;
+const MAX_NUM_MOVIE = 250;
+
+window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && CUR_IDX < MAX_NUM_MOVIE) {
+        fetch('./json/movie_info.json')
+        .then(response => response.json())
+        .then(data => {
+            makeList(data, CUR_IDX);
+        })
+        .catch(error => console.log(error));
+    }
+};
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Index loading");
@@ -9,9 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('./json/movie_info.json')
     .then(response => response.json())
     .then(data => {
-        makeList(data, cur_idx);
+        makeList(data, CUR_IDX);
     })
     .catch(error => console.log(error));
+
+    
 });
 
 function makeList(data, cur_idx) {
@@ -29,13 +43,13 @@ function makeList(data, cur_idx) {
             '<div class="movieInfo">' +
             '<a><h2>' + movie.rank + '. ' + movie.title + '</h2></a>' +
             '<div class="movieDetail">' + 
-            '<span>' + genre_html + '</span>' +
+            '<span class="movieTitle">' + genre_html + '</span>' +
             '<span>' + movie.duration + '</span>' +
             '<span class="fa fa-star checked"> ' + movie.imbd_rating + '</span>' +
             '</div>' +
             '<p class="movieIntro">' + movie.storyline + '</p>' +
             '</div>' +
-            '</div>'
-            ;
+            '</div>';
     }
+    CUR_IDX += MAX_PAGE_ITEM;
 }

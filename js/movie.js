@@ -30,20 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.log(error));
 });
 
-
-function mobileAutoSlider(selected, start_idx, total, num) {
-    document.querySelector(".autoSlider").innerHTML = "";
-    for (let i = 0; i < num; i++) {
-        let cur = (start_idx + i) % total;
-        document.querySelector(".autoSlider").innerHTML += 
-            "<a href='" + selected[cur].link + "'>" +
-            "<img src='" + selected[cur].images +
-            "' alt='" + selected[cur].title + "'>"
-            "</a>";
-    }
-    // setTimeout(mobileAutoSlider, 4000, selected, (start_idx + 1) % total, total, num);
-}
-
 function mobileAutoSlider(selected, start_idx, total, num) {
     document.querySelector(".autoSlider").innerHTML = "";
     for (let i = 0; i < total; i++) {
@@ -51,7 +37,8 @@ function mobileAutoSlider(selected, start_idx, total, num) {
         document.querySelector(".autoSlider").innerHTML += 
             "<a href='" + selected[cur].link + "'>" +
             "<img src='" + selected[cur].images +
-            "' alt='" + selected[cur].title + "'>"
+            "' alt='" + selected[cur].title +
+            "' title='IMDB " + selected[cur].title.slice(0, 10) + "...'>" +
             "</a>";
     }
     // setTimeout(mobileAutoSlider, 4000, selected, (start_idx + 1) % total, total, num);
