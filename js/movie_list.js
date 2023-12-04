@@ -38,10 +38,12 @@ function makeList(data, cur_idx) {
             genre_html += '<span class="genreTag">' + genre + '</span>';
         }
         listGrid.innerHTML += 
-            '<div class="movieItem">' +
+            '<div class="movieItem" tabindex=0>' +
             '<img src="' + movie.images + '" alt="' + movie.title + '">' +
             '<div class="movieInfo">' +
-            '<a><h2>' + movie.rank + '. ' + movie.title + '</h2></a>' +
+            '<a href="' + movie.link + '"><h2>' +
+            // movie.rank + '. ' +
+            movie.title + '</h2></a>' +
             '<div class="movieDetail">' + 
             '<span class="movieTitle">' + genre_html + '</span>' +
             '<span>' + movie.duration + '</span>' +

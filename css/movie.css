@@ -2,6 +2,19 @@
 
 /* general settings */
 
+.skip a {
+    position: absolute;
+    top: -40px;
+    left: 40px;
+    z-index: 200;
+    color: blue;
+    background-color: orange;
+}
+
+.skip a:focus {
+    top: 80px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -158,6 +171,64 @@ nav a:hover, nav a:focus, img:hover, img:focus, video:hover, video:focus {
 video {
     width: 100%;
     z-index: 0;
+}
+
+.genreList {
+    margin-bottom: 10vh;
+}
+
+.parallax {
+    background-attachment: fixed; /* Parallax effect */     
+    background-position: center;  /* Parallax effect */
+    background-repeat: no-repeat; /* Parallax effect */
+    background-size: cover;       /* Parallax effect */
+    color: white;
+    height: 30rem;                /* Parallax effect */
+    opacity: 1;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', Times, serif;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.genreList .parallax:nth-child(2n+1) {
+    justify-content: flex-start;
+}
+
+.genreList .parallax:nth-child(2n) {
+    justify-content: flex-end;
+}
+
+
+.drama {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/Drama.jpg");
+}
+
+.romance {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/Romance.jpg");
+}
+
+.action {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/Action.jpg");
+}
+
+.comedy {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/Comedy.jpg");
+}
+
+.SciFi {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/SciFi.jpg");
+}
+
+.animation {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9)), url("../images/Animation.jpg");
+    background-position: left center;
+}
+
+#oscar {
+    margin-bottom: 2rem;
 }
 
 /* ipad and laptop view */
