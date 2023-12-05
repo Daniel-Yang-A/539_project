@@ -32,15 +32,18 @@ main {
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 h2 {
-    font-family: 'Lucida Sans', Times, serif;
+    /* font-family: 'Lucida Sans', Times, serif; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.2rem;
 }
 
 p, ul li {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
 }
@@ -178,16 +181,17 @@ video {
 }
 
 .parallax {
-    background-attachment: fixed; /* Parallax effect */     
+    /* background-attachment: fixed; */
     background-position: center;  /* Parallax effect */
     background-repeat: no-repeat; /* Parallax effect */
-    background-size: cover;       /* Parallax effect */
+    /* background-size: cover; */
     color: white;
     height: 30rem;                /* Parallax effect */
     opacity: 1;
     font-size: 2rem;
     font-family: 'Lucida Sans', Times, serif;
-    padding: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -234,6 +238,26 @@ video {
 /* ipad and laptop view */
 
 @media screen and (min-width: 768px) {
+    h2 {
+        font-size: 3vh;
+    }
+
+    .parallax {
+        background-attachment: fixed; /* Parallax effect */     
+        background-position: center;  /* Parallax effect */
+        background-repeat: no-repeat; /* Parallax effect */
+        background-size: cover;       /* Parallax effect */
+        color: white;
+        height: 30rem;                /* Parallax effect */
+        opacity: 1;
+        font-size: 3vw;
+        font-family: 'Lucida Sans', Times, serif;
+        padding: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
     ul li {
         font-size: 2vw;
     }

@@ -124,7 +124,6 @@ nav a:hover, nav a:focus {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* white-space:nowrap; */
 }
 
 /* ========== */
@@ -132,6 +131,13 @@ nav a:hover, nav a:focus {
 /* ipad and laptop view */
 
 @media screen and (min-width: 768px) {
+    h2 {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
     #listGrid {
         grid-template-columns: 1fr 1fr;
         column-gap: 1.5rem;
